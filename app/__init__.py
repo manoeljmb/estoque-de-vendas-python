@@ -17,4 +17,8 @@ def create_app():
     app.register_blueprint(cliente_bp, url_prefix="/clientes")
     app.register_blueprint(venda_bp, url_prefix="/vendas")
 
+    @app.route("/")
+    def home():
+        return {"status": "API Estoque Vendas Online"}
+
     return app
